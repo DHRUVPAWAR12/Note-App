@@ -25,7 +25,7 @@ const Login = () => {
   setError("")
   try{
         dispatch(signInStart())
-        const res = await axios.post("http://localhost:3000/api/auth/signin",{email,password},{ withCredentials:true})
+        const res = await axios.post("https://note-app-frontend-gqid.onrender.com/api/auth/signin",{email,password},{ withCredentials:true})
 
         if(res.data.success === false){
           toast.error(res.data.message)
