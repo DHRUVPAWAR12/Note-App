@@ -24,7 +24,7 @@ const Navbar = ({userInfo, handleClearSearch, onSearchNote}) => {
     const onLogout = async() =>{
         try{
             dispatch(signoutStart())
-            const res = await axios.get("https://e07c-103-57-172-22.ngrok-free.app/api/auth/signout",{withCredentials: true})
+            const res = await axios.get("https://note-app-frontend-gqid.onrender.com/api/auth/signout",{withCredentials: true})
 
             if(res.data.success === false) {
                 dispatch(signoutFailure(res.data.message))
