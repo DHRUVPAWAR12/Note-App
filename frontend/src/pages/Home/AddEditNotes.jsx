@@ -12,7 +12,7 @@ const AddEditNotes = ({ onClose, noteData, type, getAllNotes }) => {
         const noteId = noteData._id
         try {
             const res = await axios.post(
-              "http://localhost:3000/api/note/edit/" + noteId,
+              "https://note-app-frontend-gqid.onrender.com/api/note/edit/" + noteId,
               { title, content, tags },
               { withCredentials: true }
             )
@@ -34,7 +34,7 @@ const AddEditNotes = ({ onClose, noteData, type, getAllNotes }) => {
      }
     const addNewnote = async () => {
         try{
-            const res = await axios.post("http://localhost:3000/api/note/add",
+            const res = await axios.post("https://note-app-frontend-gqid.onrender.com/api/note/add",
                 {title,content,tags},{withCredentials: true})
                 if(res.data.success === false){
                     console.log(res.data.message)
